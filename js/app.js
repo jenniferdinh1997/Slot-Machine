@@ -59,13 +59,16 @@ function startRound() {
     document.getElementById("three").src = rightCol;
 
     if (leftCol === midCol && midCol === rightCol && rightCol === "./images/gold.png") {
-        moneyWon += 200; 
+        moneyWon += 200;
+        glow();
     }
     else if (leftCol === midCol && midCol === rightCol && rightCol === "./images/diamond.png") {
         moneyWon += 500;
+        glow();
     }
     else if (leftCol === midCol && midCol === rightCol) {
         moneyWon += 100;
+        glow();
     }
     else {
         moneyWon;
@@ -76,4 +79,10 @@ function startRound() {
 
 function render() {
     moneyEl.innerText = `$ ${moneyWon}`;
+}
+
+//what happens when the player wins money
+function glow() {
+    const winAlert = document.querySelector(".winnings");
+    winAlert.style.boxShadow = "0 0 500px #fff";
 }
