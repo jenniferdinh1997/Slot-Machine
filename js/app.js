@@ -1,23 +1,17 @@
-//Define the constants
 const icons = ["./images/cherry.png", "./images/lemon.png", "./images/watermelon.png", "./images/grape.png", "./images/gold.png", "./images/diamond.png"];
 
-//State variables
 let moneyWon;
 let leftCol;
 let midCol;
 let rightCol;
 
-//Select the elements on the DOM that we'll have to update
 const colOne = document.querySelector(".left");
 const colTwo = document.querySelector(".middle");
 const colThree = document.querySelector(".right");
 const moneyEl = document.querySelector(".total");
 
-//Add event listeners
 document.querySelector("button").addEventListener("click", startRound);
 
-//Functions
-//sets the initial values of the state functions 
 leftCol = icons[Math.floor(Math.random() * icons.length)];
 let resultOne = document.createElement("img");
 resultOne.setAttribute("id", "one");
@@ -34,7 +28,7 @@ resultThree.setAttribute("id", "three");
 resultThree.src = rightCol;
 
 window.onload = function init() {
-    moneyWon = 0; //initial balance
+    moneyWon = 0;
 
     colOne.appendChild(resultOne);
 
@@ -45,11 +39,11 @@ window.onload = function init() {
     render();
 }
 
-// what happens each time user restarts the round
 moneyWon = 0;
 
 function startRound() {
     noGlow();
+    document.querySelector("button").innerText = "PLAY NOW!";
 
     leftCol = icons[Math.floor(Math.random() * icons.length)];
     document.getElementById("one").src = leftCol;
@@ -63,17 +57,21 @@ function startRound() {
     if (leftCol === midCol && midCol === rightCol && rightCol === "./images/gold.png") {
         moneyWon += 200;
         glow();
+        document.querySelector("button").innerText = "CONGRATS!";
     }
     else if (leftCol === midCol && midCol === rightCol && rightCol === "./images/diamond.png") {
         moneyWon += 500;
         glow();
+        document.querySelector("button").innerText = "CONGRATS!";
     }
     else if (leftCol === midCol && midCol === rightCol) {
         moneyWon += 100;
         glow();
+        document.querySelector("button").innerText = "CONGRATS!";
     }
     else {
         moneyWon;
+        document.querySelector("button").innerText = "TRY AGAIN?";
     }
 
     render();
@@ -83,7 +81,6 @@ function render() {
     moneyEl.innerText = `$ ${moneyWon}`;
 }
 
-//what happens when the player wins money
 function glow() {
     const winAlert = document.querySelector(".winnings");
     winAlert.style.boxShadow = "0 0 500px 50px #fff";
@@ -92,7 +89,6 @@ function glow() {
     colThree.style.boxShadow = "0 0 500px 50px #fff";
 }
 
-//undo the glow after player restarts round
 function noGlow() {
     const normBox = document.querySelector(".winnings");
     normBox.style.boxShadow = "0 0";
