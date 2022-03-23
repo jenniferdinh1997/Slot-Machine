@@ -49,6 +49,8 @@ window.onload = function init() {
 moneyWon = 0;
 
 function startRound() {
+    noGlow();
+
     leftCol = icons[Math.floor(Math.random() * icons.length)];
     document.getElementById("one").src = leftCol;
 
@@ -84,5 +86,17 @@ function render() {
 //what happens when the player wins money
 function glow() {
     const winAlert = document.querySelector(".winnings");
-    winAlert.style.boxShadow = "0 0 500px #fff";
+    winAlert.style.boxShadow = "0 0 500px 50px #fff";
+    colOne.style.boxShadow = "0 0 500px 50px #fff";
+    colTwo.style.boxShadow = "0 0 500px 50px #fff";
+    colThree.style.boxShadow = "0 0 500px 50px #fff";
+}
+
+//undo the glow after player restarts round
+function noGlow() {
+    const normBox = document.querySelector(".winnings");
+    normBox.style.boxShadow = "0 0";
+    colOne.style.boxShadow = "0 0";
+    colTwo.style.boxShadow = "0 0";
+    colThree.style.boxShadow = "0 0";
 }
