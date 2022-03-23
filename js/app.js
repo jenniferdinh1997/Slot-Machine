@@ -54,17 +54,17 @@ function startRound() {
     rightCol = icons[Math.floor(Math.random() * icons.length)];
     document.getElementById("three").src = rightCol;
 
-    if (leftCol === midCol && midCol === rightCol && rightCol === "./images/gold.png") {
+    if ((leftCol === midCol) && (midCol === rightCol) && (rightCol === "./images/gold.png")) {
         moneyWon += 200;
         glow();
         document.querySelector("button").innerText = "CONGRATS!";
     }
-    else if (leftCol === midCol && midCol === rightCol && rightCol === "./images/diamond.png") {
+    else if ((leftCol === midCol) && (midCol === rightCol) && (rightCol === "./images/diamond.png")) {
         moneyWon += 500;
         glow();
         document.querySelector("button").innerText = "CONGRATS!";
     }
-    else if (leftCol === midCol && midCol === rightCol) {
+    else if ((leftCol === midCol) && (midCol === rightCol)) {
         moneyWon += 100;
         glow();
         document.querySelector("button").innerText = "CONGRATS!";

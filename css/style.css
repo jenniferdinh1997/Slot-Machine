@@ -20,7 +20,7 @@ h1 {
     grid-row-end: 2;
     font-family: 'Zen Tokyo Zoo', cursive;
     color: rgba(255,220,61,1);
-    font-size: 12vh;
+    font-size: 11vh;
     margin-bottom: 1%;
     margin-top: 1%;
 }
@@ -41,11 +41,11 @@ h1 {
 .label {
     margin-top: 0%;
     margin-bottom: 0%;
-    font-size: 220%;
+    font-size: 240%;
 }
 
 .total {
-    font-size: 500%;
+    font-size: 570%;
     margin-top: 0%;
     margin-bottom: 0%;
 }
@@ -85,7 +85,7 @@ h1 {
 
 img {
     width: 100%;
-    margin-top: 7%;
+    margin-top: 8%;
 }
 
 button {
@@ -102,10 +102,10 @@ button {
     font-size: 30px;
     color: hsl(0, 0%, 100%);
     margin-top: 6%;
-    animation: glowing 1100ms infinite;
+    animation: glowBlue 1100ms infinite;
 }
 
-@keyframes glowing {
+@keyframes glowBlue {
     0% {
         background-color: #fff;
         box-shadow: 0 0 100px #fff;
