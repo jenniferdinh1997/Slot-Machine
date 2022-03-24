@@ -42,6 +42,8 @@ window.onload = function init() {
 moneyWon = 0;
 
 function startRound() {
+    document.querySelector("audio").play();
+    
     noGlow();
     document.querySelector("button").innerText = "PLAY NOW!";
 
